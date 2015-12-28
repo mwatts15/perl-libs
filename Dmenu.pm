@@ -26,3 +26,5 @@ sub show_menu
     waitpid($pid, 0);
     readline(*$out);
 }
+
+1;
