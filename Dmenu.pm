@@ -24,7 +24,13 @@ sub show_menu
     }
     close($in);
     waitpid($pid, 0);
-    readline(*$out);
+    my $res = readline(*$out);
+    if (defined($res) && length($res) > 0)
+    {
+        return $res;
+    } else {
+        return undef;
+    }
 }
 
 1;
